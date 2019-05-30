@@ -1,8 +1,11 @@
 <p>tweets<p>
 
 <% @tweets.each do |tweet| %>
-    <p> <%= tweet.full_text %> </p>
+    <p class = 'tweet'> <%= tweet[:tweet_object].text %> </p>
+    <button class = 'like-button'>'hoge'</button>
 <% end %>
+
+<div>
 
 
 

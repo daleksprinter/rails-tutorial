@@ -13,3 +13,8 @@
  *= require_tree .
  *= require_self
  */
+
+ .tweet{
+    width:30%;
+    border : solid 1px;
+ }

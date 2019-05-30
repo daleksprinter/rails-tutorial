@@ -24,7 +24,7 @@ class TweetsController < ApplicationController
         arr = []
         tweets.each do |tweet|
             tweet_object = client.status(tweet.tweet_id)
-            arr.push(tweet_object)
+            arr.push({tweet_object: tweet_object, tweet_model: tweet})
         end
         
         return arr
