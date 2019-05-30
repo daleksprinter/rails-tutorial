@@ -1,0 +1,26 @@
+<div class = 'tweet'>
+        <div class = 'tweet_data'>
+            <%= @tweet[:tweet_model].user %><br>
+            <%= @tweet[:tweet_object].text %> 
+        </div>
+        <div class = 'like-button'>
+            <%= @tweet[:tweet_model].good %>
+        </div>
+        <button onclick = 'op()'>open</button>
+
+</div>
+
+<div class = 'layer' id = 'layer'>
+</div>
+
+<div class = 'popup' id = 'popup'>
+    <div>
+        <p id = 'count'>0</p>
+        <%= @tweet[:tweet_model].user %><br>
+        <button onclick = 'finish()'>finish</button>
+        <button onclick = 'count()'>like</button>
+        <button onclick = 'cls()'>close</button>
+    </div>
+</div>
+
+<%= link_to 'Back', tweets_path%> 

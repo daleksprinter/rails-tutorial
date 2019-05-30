@@ -11,19 +11,24 @@ class TweetsController < ApplicationController
 
     private
 
-    def getTweets
+    def c
         api_key = ENV['APIKEY']
         api_secret_key = ENV['APISECRETKEY']
         access_token = ENV['ACCESSTOKEN']
         access_token_secret = ENV['ACCESSTOKENSECRET']
 
-        client = Twitter::REST::Client.new do |config|
+        ret = Twitter::REST::Client.new do |config|
             config.consumer_key        = api_key
             config.consumer_secret     = api_secret_key
             config.access_token        = access_token
             config.access_token_secret = access_token_secret
         end
 
+        return ret
+    end
+
+    def getTweets
+        client = c
         tweets = Tweet.all
         arr = []
         tweets.each do |tweet|
@@ -35,8 +40,10 @@ class TweetsController < ApplicationController
     end
 
     def getTweetbyId(id)
+        client = c
         tweet = Tweet.find(id)
-        return tweet
+        tweet_object = client.status(tweet.tweet_id)
+        return {tweet_object: tweet_object, tweet_model: tweet}
     end
 
 end
