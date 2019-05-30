@@ -2,12 +2,16 @@ require 'dotenv'
 Dotenv.load
 class TweetsController < ApplicationController
     def index
-        @tweets = getTweet
+        @tweets = getTweets
+    end
+
+    def show
+        @tweet = getTweetbyId(params[:id])
     end
 
     private
 
-    def getTweet
+    def getTweets
         api_key = ENV['APIKEY']
         api_secret_key = ENV['APISECRETKEY']
         access_token = ENV['ACCESSTOKEN']
@@ -28,6 +32,11 @@ class TweetsController < ApplicationController
         end
         
         return arr
+    end
+
+    def getTweetbyId(id)
+        tweet = Tweet.find(id)
+        return tweet
     end
 
 end

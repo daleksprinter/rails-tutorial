@@ -2,7 +2,10 @@
 
 <% @tweets.each do |tweet| %>
     <div class = 'tweet'>
-        <div class = 'tweet_data'> <%= tweet[:tweet_object].text %> </div>
+        <div class = 'tweet_data'>
+            <%= tweet[:tweet_model].user %><br>
+            <%= tweet[:tweet_object].text %> 
+        </div>
         <div class = 'like-button'>
             <%= link_to tweet[:tweet_model].good, tweet_path(tweet[:tweet_model].id)%> 
         </div>
