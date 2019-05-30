@@ -14,7 +14,17 @@
  *= require_self
  */
 
- .tweet{
+.tweet{
+    margin:2px;
+}
+
+ .tweet_data{
     width:30%;
     border : solid 1px;
+ }
+
+ .like-button{
+    width:30%;
+    border : solid 1px;
+    text-align: center;
  }
