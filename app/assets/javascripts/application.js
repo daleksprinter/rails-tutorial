@@ -14,27 +14,3 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
-var cnt = 0
-
-function op(){
-    document.getElementById("layer").style.display = 'block';
-    document.getElementById("popup").style.display = 'block';
-    cnt = 0;
-    document.getElementById("count").textContent = cnt;
-}
-
-function cls(){
-    document.getElementById("layer").style.display = 'none';
-    document.getElementById("popup").style.display = 'none';
-    cnt = 0;
-    document.getElementById("count").textContent = cnt;
-}
-
-function count(){
-    cnt++;
-    document.getElementById("count").textContent = cnt;
-}
-
-function finish(){
-    
-}
