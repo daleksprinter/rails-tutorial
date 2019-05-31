@@ -10,12 +10,14 @@ class TweetsController < ApplicationController
     end
 
     def add_like
-
         tweet = Tweet.find(params[:id])
         tweet.good = tweet.good.to_i + params[:like_count].to_i
         tweet.save
         redirect_to action: 'index'
+    end
 
+    def create
+        p params[:tweet_url]
     end
 
     private
