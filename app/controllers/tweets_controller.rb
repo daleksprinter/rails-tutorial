@@ -20,6 +20,17 @@ class TweetsController < ApplicationController
         url = params[:tweet_url] + '/'
         m = url.match(/https:\/\/twitter.com\/(.+?)\/status\/(.+?)\//)
 
+        user_id = m[1]
+        tweet_id = m[2]
+
+        tweet = Tweet.find_by(tweet_id: tweet_id)
+        if tweet
+            redirect_to action: 'show', id: tweet.id
+        else 
+            new_tweet = Tweet.new(user: user_id, tweet_id: tweet_id, good: 0)
+            new_tweet.save
+            redirect_to action: 'show', id: new_tweet.id
+        end
     end
 
     private

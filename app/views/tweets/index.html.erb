@@ -10,6 +10,7 @@
     </div>
 <% end %>
 
+<p>作者からのお願い : ツイートのurl以外を入力しないでください</p>
 <%= form_with url: tweets_path do |form| %>
     <%= form.text_field :tweet_url%>
     <%= form.submit %>
