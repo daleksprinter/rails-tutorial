@@ -17,7 +17,9 @@ class TweetsController < ApplicationController
     end
 
     def create
-        p params[:tweet_url]
+        url = params[:tweet_url] + '/'
+        m = url.match(/https:\/\/twitter.com\/(.+?)\/status\/(.+?)\//)
+
     end
 
     private
