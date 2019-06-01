@@ -14,7 +14,7 @@
             <%= tweet[:tweet_object].text %> 
         </div>
         <div class = 'like-button'>
-            <%= link_to tweet[:tweet_model].good, tweet_path(tweet[:tweet_model].id)%> 
+            <%= tweet[:tweet_model].good %> いいね 
         </div>
     </div>
 <% end %>

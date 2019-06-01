@@ -14,16 +14,22 @@
  *= require_self
  */
 
+ .tweet{
+   margin:10px;
+   border:solid 1px rgba(0, 0, 0, 0.39);
+   padding:10px;
+   border-radius: 5px;
+   width:35%;
+ }
 
  .tweet_data{
-    width:30%;
-    border : solid 1px;
+
  }
 
  .like-button{
-    width:30%;
-    border : solid 1px;
-    text-align: center;
+   background-color: lawngreen;
+   text-align: center;
+   color:white;
  }
 
  .layer{
