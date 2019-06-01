@@ -14,9 +14,6 @@
  *= require_self
  */
 
-.tweet{
-    margin:2px;
-}
 
  .tweet_data{
     width:30%;
@@ -29,12 +26,47 @@
     text-align: center;
  }
 
+ .layer{
+   display: none;  /* 初期表示は非表示 */
+   position: fixed; 
+   left: 0px;
+   top: 0px;
+   width: 100%;
+   height: 100%;
+   background-color: black;
+   opacity: 0.40;
+}
+
+.popup{
+   display: none;  /* 初期表示は非表示 */
+   position: fixed; 
+   left: 50%;
+   top: 50%;
+   width:300;
+   margin-left: -150px;
+   margin-top: -100px;
+   text-align: center;
+   overflow: hidden;
+
+}
+.tweet_detail{
+   width:300px;
+   background-color: white;
+   border: solid 0px transparent;
+   border-radius: 5px;
+   margin:2px;
+
+
+}
+
  .count_button{
-   width: 300px;
+   width: 200px;
    height : 50px;
-   background-color: rgb(75, 223, 75);
+   background-color: rgb(82, 211, 228);
    font-size: 20px;
    color: white;
+   border-radius: 5px;
+   margin:10px auto;
 }
 .close_button{
    width:300px;
@@ -42,4 +74,18 @@
    background-color: rgb(231, 72, 72);
    font-size:20px;
    color:white;
+   border-radius: 5px;
+   margin:5px;
+   vertical-align: middle;
+}
+
+.sub_button{
+   width:300px;
+   height:50px;
+   background-color: rgb(83, 240, 69);
+   color: white;
+   font-size:20px;
+   border-style: none;
+   border-radius: 5px;
+
 }
