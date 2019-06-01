@@ -13,77 +13,66 @@
  *= require_tree .
  *= require_self
  */
+body{
+   background-color: rgb(235, 240, 240);
+}
 
+.show{
+   width:35%;
+   margin: auto;
+}
  .tweet{
-   margin:10px;
-   border:solid 1px rgba(0, 0, 0, 0.39);
+   margin:10px auto;
    padding:10px;
    border-radius: 5px;
-   width:35%;
+   background-color: white;
+   text-align: center;
  }
 
- .tweet_data{
-
+ .tweet_list{
+      margin:10px auto;
+      padding:10px;
+      border-radius: 5px;
+      background-color: white;
+      text-align: center;
+      width:35%;
  }
 
- .tweet_link{
-   text-decoration: none;
- }
+.count{
+   font-size:20px;
+}
+ 
 
  .like-button{
    background-color: lawngreen;
    text-align: center;
    color:white;
+   margin:auto;
  }
 
- .layer{
-   display: none;  /* 初期表示は非表示 */
-   position: fixed; 
-   left: 0px;
-   top: 0px;
-   width: 100%;
-   height: 100%;
-   background-color: black;
-   opacity: 0.40;
-}
 
 a:visited{
    color:black;
 }
 
-.popup{
-   display: none;  /* 初期表示は非表示 */
-   position: fixed; 
-   left: 50%;
-   top: 50%;
-   width:300;
-   margin-left: -150px;
-   margin-top: -100px;
+.backbutton{
+   width:80px;
+   height:40px;
+   color:white;
+   border-radius: 5px;
+   font-size: 20px;
    text-align: center;
-   overflow: hidden;
-
+   background-color: rgb(72, 72, 168);
 }
+
 .tweet_detail{
    width:300px;
    background-color: white;
    border: solid 0px transparent;
    border-radius: 5px;
    margin:2px;
-
-
 }
 
-
-.close_button{
-   width:300px;
-   height : 50px;
-   background-color: rgb(231, 72, 72);
-   font-size:20px;
-   color:white;
-   border-radius: 5px;
-   margin:5px;
-   vertical-align: middle;
-}
 
 .sub_button{
    width:300px;
@@ -93,7 +82,6 @@ a:visited{
    font-size:20px;
    border-style: none;
    border-radius: 5px;
-
 }
 
 

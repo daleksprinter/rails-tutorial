@@ -1,15 +1,24 @@
+<style>
+    .add_url{
+        text-align: right;
+    }
+    .tweet_link{
+        text-decoration: none;
+    }
+</style>
 
-<p>作者からのお願い : ツイートのurl以外を入力しないでください</p>
-<%= form_with url: tweets_path do |form| %>
-    <%= form.text_field :tweet_url%>
-    <%= form.submit %>
-<% end %>
 
-
+<div class = 'add_url'>
+    <p>作者からのお願い : ツイートのurl以外を入力しないでください</p>
+    <%= form_with url: tweets_path do |form| %>
+        <%= form.text_field :tweet_url%>
+        <%= form.submit %>
+    <% end %>
+</div>
 
 <% @tweets.each do |tweet| %>
     <%= link_to tweet_path(tweet[:tweet_model]), class:"tweet_link" do %>
-    <div class = 'tweet'>
+    <div class = 'tweet_list'>
         <div class = 'tweet_data'>
             <%= tweet[:tweet_model].user %><br>
             <%= tweet[:tweet_object].text %> 
@@ -20,10 +29,3 @@
     </div>
     <% end %>
 <% end %>
-
-
-<div>
-
-
-
-

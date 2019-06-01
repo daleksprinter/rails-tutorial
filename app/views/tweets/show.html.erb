@@ -30,14 +30,8 @@
 
 </script>
 
-<style>
-    
-
-
-
-</style>
-
-<div class = 'tweet'>
+<div class = 'show'>
+    <div class = 'tweet'>
         <div class = 'tweet_data'>
             <%= @tweet[:tweet_model].user %><br>
             <%= @tweet[:tweet_object].text %> 
@@ -45,30 +39,17 @@
         <div class = 'like-button'>
             <%= @tweet[:tweet_model].good %>
         </div>
-        <button onclick = 'op()'>open</button>
 
-</div>
-
-<div class = 'layer' id = 'layer'>
-</div>
-
-<div class = 'popup' id = 'popup'>
-    <div class = 'tweet_detail'>
-        
-        <%= @tweet[:tweet_object].text %><br>
-        <p id = 'count'>0</p>
+        <p id = 'count' class = 'count'>0</p>
         <div onclick = 'count()' class = 'count_button'>Like</div>
-        
+        <%= form_with url: add_like_tweet_path(@tweet[:tweet_model]) do |form| %>
+            <%= form.hidden_field :like_count%>
+            <%= form.submit 'finish', :class=>"sub_button" %>
+        <% end %>
     </div>
-    <%= form_with url: add_like_tweet_path(@tweet[:tweet_model]) do |form| %>
-        <%= form.hidden_field :like_count%>
-        <%= form.submit 'finish', :class=>"sub_button" %>
+    <%= link_to tweets_path, class:'back-link' do %>
+        <div class = 'backbutton'>Back</div>
     <% end %>
-    <div onclick = 'cls()' class = 'close_button'>close</div>
-   
-    
+
 </div>
 
-<%= link_to tweets_path%>
-    <div class = 'backbutton'>Back</div>
-<% end %>
